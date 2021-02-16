@@ -1,0 +1,21 @@
+//
+//  Config.xcconfig
+//  ListTestProject
+//
+//  Created by Winda Wei on 2/3/21.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+//APP Value
+APP_NAME = WendyApp
+
+//Server
+BASE_URL = https:\/\/www.68software.com //https://www.ifengus.com/
+UserLoginUrl = /api/user/loginios
+ChannelUrl = /api/cms/channel
+ArchiveUrl = /api/cms/archives
+
+//Key
+APITOKEN = hiRNzRjQ!x2x@H@X

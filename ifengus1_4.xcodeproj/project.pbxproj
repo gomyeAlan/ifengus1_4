@@ -8,22 +8,62 @@
 
 /* Begin PBXBuildFile section */
 		15220A6B25DC374300E95164 /* ifengus1_4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220A6A25DC374300E95164 /* ifengus1_4App.swift */; };
-		15220A6D25DC374300E95164 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220A6C25DC374300E95164 /* ContentView.swift */; };
+		15220A6D25DC374300E95164 /* AppMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220A6C25DC374300E95164 /* AppMainView.swift */; };
 		15220A6F25DC374400E95164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15220A6E25DC374400E95164 /* Assets.xcassets */; };
 		15220A7225DC374400E95164 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15220A7125DC374400E95164 /* Preview Assets.xcassets */; };
 		15220A7425DC374400E95164 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220A7325DC374400E95164 /* Persistence.swift */; };
 		15220A7725DC374400E95164 /* ifengus1_4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15220A7525DC374400E95164 /* ifengus1_4.xcdatamodeld */; };
+		15220A8325DC37C600E95164 /* ChannelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220A8225DC37C600E95164 /* ChannelManager.swift */; };
+		15220A8625DC388D00E95164 /* SpecialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220A8525DC388D00E95164 /* SpecialManager.swift */; };
+		15220A8925DC398D00E95164 /* ArchiveListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220A8825DC398D00E95164 /* ArchiveListManager.swift */; };
+		15220A8D25DC3BF000E95164 /* ArchiveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220A8C25DC3BF000E95164 /* ArchiveManager.swift */; };
+		15220A9025DC3E8700E95164 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 15220A8F25DC3E8700E95164 /* Config.xcconfig */; };
+		15220A9425DC422000E95164 /* PublicSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220A9325DC422000E95164 /* PublicSearchBar.swift */; };
+		15220A9725DC42D500E95164 /* PublicAccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220A9625DC42D500E95164 /* PublicAccountButton.swift */; };
+		15220A9A25DC43A900E95164 /* UserCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220A9925DC43A900E95164 /* UserCenterView.swift */; };
+		15220A9E25DC44A800E95164 /* UserLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220A9D25DC44A800E95164 /* UserLoginManager.swift */; };
+		15220AA125DC45B000E95164 /* PublicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220AA025DC45B000E95164 /* PublicManager.swift */; };
+		15220AA525DC480800E95164 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220AA425DC480800E95164 /* TodayView.swift */; };
+		15220AA825DC4DBB00E95164 /* PublicTopAdsBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220AA725DC4DBB00E95164 /* PublicTopAdsBlock.swift */; };
+		15220AAB25DC4E8300E95164 /* ArchiveListBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220AAA25DC4E8300E95164 /* ArchiveListBlock.swift */; };
+		15220AAE25DC500000E95164 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220AAD25DC500000E95164 /* MenuView.swift */; };
+		15220AB125DC52C600E95164 /* ArchiveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220AB025DC52C600E95164 /* ArchiveDetailView.swift */; };
+		15220AB425DC533400E95164 /* ChanneListlBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220AB325DC533400E95164 /* ChanneListlBlock.swift */; };
+		15220AB825DC540400E95164 /* ArchiveListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220AB725DC540400E95164 /* ArchiveListView.swift */; };
+		15220ABB25DC554400E95164 /* SpecialListBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220ABA25DC554400E95164 /* SpecialListBlock.swift */; };
+		15220ABE25DC55FC00E95164 /* SpecialListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220ABD25DC55FC00E95164 /* SpecialListView.swift */; };
+		15220AC125DC565300E95164 /* SpecialListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220AC025DC565300E95164 /* SpecialListManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		15220A6725DC374300E95164 /* ifengus1_4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ifengus1_4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15220A6A25DC374300E95164 /* ifengus1_4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ifengus1_4App.swift; sourceTree = "<group>"; };
-		15220A6C25DC374300E95164 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		15220A6C25DC374300E95164 /* AppMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainView.swift; sourceTree = "<group>"; };
 		15220A6E25DC374400E95164 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15220A7125DC374400E95164 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		15220A7325DC374400E95164 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		15220A7625DC374400E95164 /* ifengus1_4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ifengus1_4.xcdatamodel; sourceTree = "<group>"; };
 		15220A7825DC374400E95164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15220A8225DC37C600E95164 /* ChannelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelManager.swift; sourceTree = "<group>"; };
+		15220A8525DC388D00E95164 /* SpecialManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialManager.swift; sourceTree = "<group>"; };
+		15220A8825DC398D00E95164 /* ArchiveListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveListManager.swift; sourceTree = "<group>"; };
+		15220A8C25DC3BF000E95164 /* ArchiveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveManager.swift; sourceTree = "<group>"; };
+		15220A8F25DC3E8700E95164 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		15220A9325DC422000E95164 /* PublicSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicSearchBar.swift; sourceTree = "<group>"; };
+		15220A9625DC42D500E95164 /* PublicAccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicAccountButton.swift; sourceTree = "<group>"; };
+		15220A9925DC43A900E95164 /* UserCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenterView.swift; sourceTree = "<group>"; };
+		15220A9D25DC44A800E95164 /* UserLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginManager.swift; sourceTree = "<group>"; };
+		15220AA025DC45B000E95164 /* PublicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicManager.swift; sourceTree = "<group>"; };
+		15220AA425DC480800E95164 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		15220AA725DC4DBB00E95164 /* PublicTopAdsBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicTopAdsBlock.swift; sourceTree = "<group>"; };
+		15220AAA25DC4E8300E95164 /* ArchiveListBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveListBlock.swift; sourceTree = "<group>"; };
+		15220AAD25DC500000E95164 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		15220AB025DC52C600E95164 /* ArchiveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailView.swift; sourceTree = "<group>"; };
+		15220AB325DC533400E95164 /* ChanneListlBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChanneListlBlock.swift; sourceTree = "<group>"; };
+		15220AB725DC540400E95164 /* ArchiveListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveListView.swift; sourceTree = "<group>"; };
+		15220ABA25DC554400E95164 /* SpecialListBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialListBlock.swift; sourceTree = "<group>"; };
+		15220ABD25DC55FC00E95164 /* SpecialListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialListView.swift; sourceTree = "<group>"; };
+		15220AC025DC565300E95164 /* SpecialListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialListManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +96,14 @@
 		15220A6925DC374300E95164 /* ifengus1_4 */ = {
 			isa = PBXGroup;
 			children = (
+				15220A8125DC378400E95164 /* View */,
+				15220A8025DC377200E95164 /* ViewModel */,
+				15220A7F25DC376400E95164 /* Model */,
 				15220A6A25DC374300E95164 /* ifengus1_4App.swift */,
-				15220A6C25DC374300E95164 /* ContentView.swift */,
 				15220A6E25DC374400E95164 /* Assets.xcassets */,
 				15220A7325DC374400E95164 /* Persistence.swift */,
 				15220A7825DC374400E95164 /* Info.plist */,
+				15220A8F25DC3E8700E95164 /* Config.xcconfig */,
 				15220A7525DC374400E95164 /* ifengus1_4.xcdatamodeld */,
 				15220A7025DC374400E95164 /* Preview Content */,
 			);
@@ -73,6 +116,47 @@
 				15220A7125DC374400E95164 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		15220A7F25DC376400E95164 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15220A8225DC37C600E95164 /* ChannelManager.swift */,
+				15220A8525DC388D00E95164 /* SpecialManager.swift */,
+				15220AC025DC565300E95164 /* SpecialListManager.swift */,
+				15220A8825DC398D00E95164 /* ArchiveListManager.swift */,
+				15220A8C25DC3BF000E95164 /* ArchiveManager.swift */,
+				15220A9D25DC44A800E95164 /* UserLoginManager.swift */,
+				15220AA025DC45B000E95164 /* PublicManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15220A8025DC377200E95164 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				15220A9325DC422000E95164 /* PublicSearchBar.swift */,
+				15220AAA25DC4E8300E95164 /* ArchiveListBlock.swift */,
+				15220A9625DC42D500E95164 /* PublicAccountButton.swift */,
+				15220AA725DC4DBB00E95164 /* PublicTopAdsBlock.swift */,
+				15220AB325DC533400E95164 /* ChanneListlBlock.swift */,
+				15220ABA25DC554400E95164 /* SpecialListBlock.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		15220A8125DC378400E95164 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15220A6C25DC374300E95164 /* AppMainView.swift */,
+				15220A9925DC43A900E95164 /* UserCenterView.swift */,
+				15220AA425DC480800E95164 /* TodayView.swift */,
+				15220AAD25DC500000E95164 /* MenuView.swift */,
+				15220AB025DC52C600E95164 /* ArchiveDetailView.swift */,
+				15220AB725DC540400E95164 /* ArchiveListView.swift */,
+				15220ABD25DC55FC00E95164 /* SpecialListView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15220A7225DC374400E95164 /* Preview Assets.xcassets in Resources */,
+				15220A9025DC3E8700E95164 /* Config.xcconfig in Resources */,
 				15220A6F25DC374400E95164 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,10 +229,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15220A9425DC422000E95164 /* PublicSearchBar.swift in Sources */,
+				15220AB825DC540400E95164 /* ArchiveListView.swift in Sources */,
 				15220A7725DC374400E95164 /* ifengus1_4.xcdatamodeld in Sources */,
+				15220AA125DC45B000E95164 /* PublicManager.swift in Sources */,
+				15220A8325DC37C600E95164 /* ChannelManager.swift in Sources */,
 				15220A7425DC374400E95164 /* Persistence.swift in Sources */,
-				15220A6D25DC374300E95164 /* ContentView.swift in Sources */,
+				15220A6D25DC374300E95164 /* AppMainView.swift in Sources */,
+				15220AA825DC4DBB00E95164 /* PublicTopAdsBlock.swift in Sources */,
+				15220AB125DC52C600E95164 /* ArchiveDetailView.swift in Sources */,
+				15220AAE25DC500000E95164 /* MenuView.swift in Sources */,
+				15220A8D25DC3BF000E95164 /* ArchiveManager.swift in Sources */,
+				15220ABB25DC554400E95164 /* SpecialListBlock.swift in Sources */,
+				15220A9A25DC43A900E95164 /* UserCenterView.swift in Sources */,
+				15220AB425DC533400E95164 /* ChanneListlBlock.swift in Sources */,
+				15220A9725DC42D500E95164 /* PublicAccountButton.swift in Sources */,
+				15220AAB25DC4E8300E95164 /* ArchiveListBlock.swift in Sources */,
+				15220A9E25DC44A800E95164 /* UserLoginManager.swift in Sources */,
+				15220AA525DC480800E95164 /* TodayView.swift in Sources */,
 				15220A6B25DC374300E95164 /* ifengus1_4App.swift in Sources */,
+				15220A8625DC388D00E95164 /* SpecialManager.swift in Sources */,
+				15220ABE25DC55FC00E95164 /* SpecialListView.swift in Sources */,
+				15220AC125DC565300E95164 /* SpecialListManager.swift in Sources */,
+				15220A8925DC398D00E95164 /* ArchiveListManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
