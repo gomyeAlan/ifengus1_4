@@ -11,14 +11,46 @@ struct TodayView: View {
     @StateObject var  jam = JSONArchivesModel()
     @State private var archivepage: Int = 1
     
+    @StateObject var topadsModel = TopAdsManager()
+//    @StateObject private var imageLoaderTopAds = CoverImageLoader()
+    @Environment (\.managedObjectContext) var moc
+    // Fetching Data From Core Data...
+    @FetchRequest(entity: Topadsinfo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Topadsinfo.title, ascending: true)] ) var results : FetchedResults<Topadsinfo>
+    
+    
     var body: some View {
         ScrollView {
+
             //setupCurrentDate(by: 0)
+        VStack(alignment: .leading) {
+            Text("Hot")
+                .font(.headline)
+                .padding(.leading, 15)
+                .padding(.top, 5)
             
-            VStack {
-                VStack {
+
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(alignment: .top, spacing: 0) {
+                            if topadsModel.topAds.isEmpty {
+                                ProgressView()
+                                    .onAppear(perform: {
+                                        topadsModel.fetchTopAdsData(context: moc)
+                                    })
+                            } else {
+                            ForEach(topadsModel.topAds){ topAd in
+                                PublicTopAdsBlock(topAds:topAd) //头部广告轮播
+                            }
+                            }
+                        }
+                    }
+                                
+                                
+            VStack(alignment: .leading) {
+                    Text("New")
+                        .font(.headline)
+                        .padding(.leading, 15)
+                        .padding(.top, 5)
                     
-                    PublicTopAdsBlock() //头部广告轮播
                     if jam.archiveists.isEmpty {
                         ProgressView()
                             .onAppear(perform: {
@@ -38,12 +70,9 @@ struct TodayView: View {
                         }
                     }
                 }
-            }
+            }.padding(16)
             
-        }.onAppear{
-            print("scrollview======")
         }
-        
     }
 }
 

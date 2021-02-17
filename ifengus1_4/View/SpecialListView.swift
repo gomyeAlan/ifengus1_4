@@ -33,9 +33,9 @@ struct SpecialListView: View {
                                             }
                                         //display fetched JSON data...
                                         }
-                                    }
-                    }
-                    }
+                                }
+                        }
+                }
         }
 }
 
