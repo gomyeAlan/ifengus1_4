@@ -26,9 +26,6 @@ struct UserCenterView: View {
      private var userlist: FetchedResults<Userinfo>
      
     
-    
-    
-    
     var body: some View {
         VStack{
 //已经登录-------
