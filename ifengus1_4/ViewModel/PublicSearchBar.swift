@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 
 struct PublicSearchBar: View {
@@ -34,6 +35,15 @@ struct SearchBar: UIViewRepresentable {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
       searchBar.resignFirstResponder()
+        let searchtxt = self.text
+        if (searchtxt != "") {
+            print("\(searchtxt)====")
+            //Fetch data from URLSession
+//            SearchListView(search: <#T##SearchArchiveListModel#>)
+            
+        } else {
+            print("Please input search key")
+        }
     }
   }
   
@@ -57,6 +67,18 @@ struct SearchBar: UIViewRepresentable {
   
 }
 
+extension UIViewRepresentable {
+    func pressesEnd(_ presses: Set<UIPress>, with even: UIPressesEvent) {
+        guard let key = presses.first?.key else { return }
+
+                switch key.keyCode {
+                case .keyboardSpacebar:
+                    print("keyboardSpacebar")
+                default:
+                    print("default")
+                }
+    }
+}
 
 struct CustomSearchBar_Previews: PreviewProvider {
     static var previews: some View {
