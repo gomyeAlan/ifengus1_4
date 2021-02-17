@@ -35,6 +35,9 @@
 		15220AC125DC565300E95164 /* SpecialListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15220AC025DC565300E95164 /* SpecialListManager.swift */; };
 		15220AD225DC94DE00E95164 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 15220AD125DC94DE00E95164 /* SDWebImageSwiftUI */; };
 		CF272E4225DCA23C003959A5 /* TopAdsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF272E4125DCA23C003959A5 /* TopAdsManager.swift */; };
+		CFAC3A5825DD8097003BB33F /* SearchArchiveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAC3A5725DD8097003BB33F /* SearchArchiveManager.swift */; };
+		CFAC3A5B25DD80A0003BB33F /* SearchArchiveListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAC3A5A25DD80A0003BB33F /* SearchArchiveListManager.swift */; };
+		CFAC3A5E25DD80B5003BB33F /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAC3A5D25DD80B5003BB33F /* SearchListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		15220ABD25DC55FC00E95164 /* SpecialListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialListView.swift; sourceTree = "<group>"; };
 		15220AC025DC565300E95164 /* SpecialListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialListManager.swift; sourceTree = "<group>"; };
 		CF272E4125DCA23C003959A5 /* TopAdsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAdsManager.swift; sourceTree = "<group>"; };
+		CFAC3A5725DD8097003BB33F /* SearchArchiveManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchArchiveManager.swift; sourceTree = "<group>"; };
+		CFAC3A5A25DD80A0003BB33F /* SearchArchiveListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchArchiveListManager.swift; sourceTree = "<group>"; };
+		CFAC3A5D25DD80B5003BB33F /* SearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,8 @@
 				15220A8825DC398D00E95164 /* ArchiveListManager.swift */,
 				15220A8C25DC3BF000E95164 /* ArchiveManager.swift */,
 				CF272E4125DCA23C003959A5 /* TopAdsManager.swift */,
+				CFAC3A5725DD8097003BB33F /* SearchArchiveManager.swift */,
+				CFAC3A5A25DD80A0003BB33F /* SearchArchiveListManager.swift */,
 				15220A9D25DC44A800E95164 /* UserLoginManager.swift */,
 				15220AA025DC45B000E95164 /* PublicManager.swift */,
 			);
@@ -143,6 +151,7 @@
 				15220A9325DC422000E95164 /* PublicSearchBar.swift */,
 				15220AAA25DC4E8300E95164 /* ArchiveListBlock.swift */,
 				15220A9625DC42D500E95164 /* PublicAccountButton.swift */,
+				CFAC3A5D25DD80B5003BB33F /* SearchListView.swift */,
 				15220AA725DC4DBB00E95164 /* PublicTopAdsBlock.swift */,
 				15220AB325DC533400E95164 /* ChanneListlBlock.swift */,
 				15220ABA25DC554400E95164 /* SpecialListBlock.swift */,
@@ -255,7 +264,9 @@
 				CF272E4225DCA23C003959A5 /* TopAdsManager.swift in Sources */,
 				15220A9A25DC43A900E95164 /* UserCenterView.swift in Sources */,
 				15220AB425DC533400E95164 /* ChanneListlBlock.swift in Sources */,
+				CFAC3A5E25DD80B5003BB33F /* SearchListView.swift in Sources */,
 				15220A9725DC42D500E95164 /* PublicAccountButton.swift in Sources */,
+				CFAC3A5B25DD80A0003BB33F /* SearchArchiveListManager.swift in Sources */,
 				15220AAB25DC4E8300E95164 /* ArchiveListBlock.swift in Sources */,
 				15220A9E25DC44A800E95164 /* UserLoginManager.swift in Sources */,
 				15220AA525DC480800E95164 /* TodayView.swift in Sources */,
@@ -264,6 +275,7 @@
 				15220ABE25DC55FC00E95164 /* SpecialListView.swift in Sources */,
 				15220AC125DC565300E95164 /* SpecialListManager.swift in Sources */,
 				15220A8925DC398D00E95164 /* ArchiveListManager.swift in Sources */,
+				CFAC3A5825DD8097003BB33F /* SearchArchiveManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
