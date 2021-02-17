@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct AppMainView: View {
-
-        @State var isAccountViewPresented = false
-        @State var text: String = ""
-        
-      var body: some View {
-        VStack {
-            
+    @State var isAccountViewPresented = false
+    @State var text: String = ""
+    var body: some View {
 
         NavigationView{
             VStack {
@@ -29,20 +25,12 @@ struct AppMainView: View {
                     .tabItem {
                         Image(systemName: "list.bullet")
                         Text("Menu")
-                    }
 
+                    }
+                 
             }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .navigationBarItems(trailing: PublicAccountButton(isAccountViewPresented: $isAccountViewPresented))
-            }
-        }
-        }
-      
+        }.navigationViewStyle(StackNavigationViewStyle())
+         .navigationBarItems(trailing: PublicAccountButton(isAccountViewPresented: $isAccountViewPresented))
       }
     }
-
-struct AppMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        AppMainView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
-}
