@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI //下载网络图片第三方组建
+
 
 struct UserCenterView: View {
     // @Binding var selected:Int
      @ObservedObject var loginmanager: UserLoginManager = UserLoginManager()
-     @StateObject private var imageLoader = CoverImageLoader()
-     
+
+    
      @State var username = ""
      @State var password = ""
      @State var returnmsg = ""
@@ -39,23 +41,20 @@ struct UserCenterView: View {
                       label: {
                         HStack {
                             
-                            if imageLoader.image != nil {
-                            Image(uiImage: imageLoader.image!)
+                            WebImage(url: URL(string: String(infoForKey("BASEURL")!) + "\(userlist.first!.avatar!)")) // 加载网络图片
+                                .placeholder{ Color.gray }
                                 .resizable()
                                 .scaledToFill()
-                                .clipped()
                                 .frame(width: 50, height: 50)
-                                .clipShape(Circle())
-                                .padding()
-                            }
+                                .clipped()
+                                .font(.system(size: 25))
+                            
+                           
                           VStack (alignment: .leading, spacing: 5) {
                             Text("\(userlist.first!.username!)")
                               .font(.system(size: 25))
                           }
-                        }.onAppear {
-                            imageLoader.load("https://www.68software.com" + "\(userlist.first!.avatar!)")
-                            print ("https://www.68software.com" + "\(userlist.first!.avatar!)")
-                         }
+                        }
                       }
                     )
                 }
