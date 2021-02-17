@@ -13,7 +13,7 @@ struct PublicSearchBar: View {
   
   var body: some View {
     SearchBar(text: $text)
-      .padding(.horizontal, 8)
+      .padding(.horizontal, 2)
   }
 }
 

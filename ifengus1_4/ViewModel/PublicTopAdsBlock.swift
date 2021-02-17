@@ -46,9 +46,9 @@ struct PublicTopAdsBlock: View {
                     }
                 }else {
                     ForEach(results) { topAd in
-                        
+
                         VStack(alignment: .leading) {
-                            
+
                             WebImage(url: URL(string: topAd.image!)) // 加载网络图片
                                 .placeholder{ Color.gray }
                                 .resizable()

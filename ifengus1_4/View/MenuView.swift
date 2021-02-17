@@ -70,7 +70,7 @@ struct MenuView: View {
                 SpecialListBlock()
             }
             Spacer()
-        }
+        } 
     }
 }
 

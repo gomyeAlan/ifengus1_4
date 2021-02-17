@@ -17,6 +17,7 @@ struct TodayView: View {
             
             VStack {
                 VStack {
+                    
                     PublicTopAdsBlock() //头部广告轮播
                     if jam.archiveists.isEmpty {
                         ProgressView()
@@ -42,7 +43,7 @@ struct TodayView: View {
         }.onAppear{
             print("scrollview======")
         }
-        .navigationBarTitle("Today")
+        
     }
 }
 
