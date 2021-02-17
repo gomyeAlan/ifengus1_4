@@ -30,7 +30,7 @@ class TopAdsManager: ObservableObject {
     
     // saving jSON to Core Data...
     func saveData(context: NSManagedObjectContext){
-        topAds.forEach{ (data) in
+        self.topAds.forEach{ (data) in
             let entity = Topadsinfo(context: context)
             entity.id = Int16(data.id)
             entity.title = data.title
@@ -51,6 +51,7 @@ class TopAdsManager: ObservableObject {
 
     //Fetch Json 数据
     func fetchTopAdsData(context: NSManagedObjectContext){
+//    func fetchTopAdsData(){
         let url = "https://ifengus.com/api/cms/getblocklist?apitoken=hiRNzRjQ!x2x@H@X"
         let request = URLRequest(url: URL(string: url)!)
 //        request.addValue("swiftui2.0", forHTTPHeaderField: "field")
@@ -82,10 +83,24 @@ class TopAdsManager: ObservableObject {
             catch{
                 print(error.localizedDescription)
             }
-            
         }
         .resume()
-        
+    }
+    
+    func cleanTopAdsData(context: NSManagedObjectContext){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+        fetchRequest.entity = NSEntityDescription.entity(forEntityName: "Topadsinfo", in: context)
+        fetchRequest.includesPropertyValues = false
+        do {
+            if let results = try context.fetch(fetchRequest) as? [NSManagedObject] {
+            for result in results {
+                context.delete(result)
+            }
+                try context.save()
+          }
+        } catch {
+            print("failed to clear core data")
+        }
     }
 }
 
