@@ -7,6 +7,8 @@
 
 import SwiftUI
 import CoreData
+import SDWebImageSwiftUI //下载网络图片第三方组建
+
 
 struct PublicTopAdsBlock: View {
     @StateObject var topadsModel = TopAdsManager()
@@ -16,7 +18,7 @@ struct PublicTopAdsBlock: View {
     @FetchRequest(entity: Topadsinfo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Topadsinfo.title, ascending: true)] ) var results : FetchedResults<Topadsinfo>
     var body: some View {
         TabView {
-            VStack{
+        
                 if results.isEmpty {
                     if topadsModel.topAds.isEmpty {
                         ProgressView()
@@ -24,55 +26,54 @@ struct PublicTopAdsBlock: View {
                                 topadsModel.fetchTopAdsData(context: moc)
                             })
                     } else {
-                        List(topadsModel.topAds) { topAd in
-                            Text("\(topAd.title)")
-                            Text("\(topAd.image)")
+                        ForEach(topadsModel.topAds){ topAd in
+                  
+                            VStack(alignment: .leading) {
+                                
+                                WebImage(url: URL(string: topAd.image)) // 加载网络图片
+                                    .placeholder{ Color.gray }
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: UIScreen.main.bounds.width - 32, height: UIScreen.main.bounds.width * 0.5)
+                                    .clipped()
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+
+                                Text(topAd.title)
+                                    .font(.title3)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
-                } else {
-                    List(results) { topAd in
-                        Text("\(topAd.title!)")
-                        Text("\(topAd.image!)")
+                }else {
+                    ForEach(results) { topAd in
+                        
+                        VStack(alignment: .leading) {
+                            
+                            WebImage(url: URL(string: topAd.image!)) // 加载网络图片
+                                .placeholder{ Color.gray }
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: UIScreen.main.bounds.width - 32, height: UIScreen.main.bounds.width * 0.5)
+                                .clipped()
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+
+//                            Text("UPDATE")
+//                                .bold()
+//                                .foregroundColor(.blue)
+//                                .font(.footnote)
+                            Text(topAd.title!)
+//                                .font(.title3)
+//                            Text("Description")
+//                                .foregroundColor(.secondary)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
                     }
                 }
-            }
-        }
-        .frame(width: UIScreen.main.bounds.width-32, height: 300)
-//        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                }
+            
+        .frame(width: UIScreen.main.bounds.width - 32, height: 300)
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .padding(.bottom, 24)
     }
 }
-
-
-//ForEach(topadsModel.topAds){ topAd in
-//    VStack {
-//        Divider()
-//        VStack(alignment: .leading) {
-//            if imageLoaderTopAds.image != nil {
-//                Image(uiImage: imageLoaderTopAds.image!)
-//                    .resizable()
-//                    .scaledToFill()
-//                    .frame(width: UIScreen.main.bounds.width-32, height: UIScreen.main.bounds.width * 0.5)
-//                    .aspectRatio(contentMode: .fit)
-//                    .cornerRadius(5)
-//                    .clipped()
-//            } else {
-//                RoundedRectangle(cornerRadius: 12, style: .continuous)
-//                    .foregroundColor(.secondary)
-//                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 0.5)
-//            }
-//            Text("UPDATE")
-//                .bold()
-//                .foregroundColor(.blue)
-//                .font(.footnote)
-//            Text(topAd.title)
-//                .font(.title3)
-//            Text("Description")
-//                .foregroundColor(.secondary)
-//        }
-//        .frame(maxWidth: .infinity, alignment: .leading)
-//    }
-//    .onAppear {
-//        imageLoaderTopAds.load(topAd.image)
-//    }
-//}.padding(.horizontal)
