@@ -27,8 +27,8 @@ struct AppMainView: View {
                     }
                 MenuView()
                     .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Search")
+                        Image(systemName: "list.bullet")
+                        Text("Menu")
                     }
 
             }

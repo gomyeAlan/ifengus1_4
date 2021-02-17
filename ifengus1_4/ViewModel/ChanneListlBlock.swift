@@ -13,8 +13,6 @@ struct ChanneListlBlock: View {
   var body: some View {
 
     List(channelmanager.channelModel) {channel in
-            Divider()
-     
             HStack {
                 Image(systemName: "dot.circle.and.cursorarrow")
                     .frame(width: 24, height: 24)
