@@ -10,8 +10,15 @@ import SwiftUI
 struct ArchiveDetailView: View {
     @Binding var cid: Int
     @State var arm: ArchiveModel?
+    
+    var Htmls : String = ""
+    
     var body: some View {
+        
+
+        
         if arm != nil {
+            ScrollView{
             VStack
             {
                 Text("\(self.arm!.title)")
@@ -32,14 +39,30 @@ struct ArchiveDetailView: View {
                 .foregroundColor(.gray)
                 .frame(width: 200, height: 25, alignment: .leading)
                 
-                HStack{
-                    Text("\(self.arm!.content)")
-                }
+//                <html>
+//                <head>
+//                <meta name="viewport" content="width=device-width, initial-scale=1">
+//                <style> body { font-size: 150%; } </style>
+//                </head>
+//                <body>
+//                \(detailItem.body)
+//                </body>
+//                </html>
+                
+                
+                
+                    //Text("\(self.arm!.content)")
+                  HTMLStringView(htmlContent: "<style> body { font-size: 300%; } </style><body>" + "\(self.arm!.content)" + "</body>") 
+                        .font(.system(size: 32))
+
+               
+//                Spacer()
+//                VStack{
+//                    Text("Other ArchivesList")
+//                }
                 Spacer()
-                VStack{
-                    Text("Other ArchivesList")
-                }
-                Spacer()
+            }.frame(width: UIScreen.main.bounds.width - 32, height: UIScreen.main.bounds.height , alignment: .leading)
+            
             }
         } else {
             ProgressView()
@@ -50,8 +73,9 @@ struct ArchiveDetailView: View {
                         }
                     })
                 }
+            }
         }
-    }
+  
 }
 
 //struct ArchiveView_Previews: PreviewProvider {
