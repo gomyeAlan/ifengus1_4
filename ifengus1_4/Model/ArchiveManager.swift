@@ -16,28 +16,28 @@ struct ArchiveModel: Codable, Identifiable,  Hashable {
     var model_id: Int
     var special_id: Int
     var title: String
-    var style: String
+//    var style: String
     var flag: String
     var image: String
     var keywords: String
     var description: String
-    var tags: String
-    var weigh: Int
+//    var tags: String
+//    var weigh: Int
     var views: Int
     var comments: Int
     var likes: Int
     var dislikes: Int
-    var diyname: String
-    var createtime: Date
+//    var diyname: String
+    var createtime: Date?
 //    var updatetime: Date
-    var publishtime: Date
+    var publishtime: Date?
 //    var deletetime: Date
-    var memo: String
-    var status: String
+//    var memo: String
+//    var status: String
     var content: String
-    var author: String
+//    var author: String
 //    var price: Double
-    var channel: ChannelModel
+//    var channel: ChannelModel
 }
 
 
@@ -52,10 +52,10 @@ struct responseArchive: Codable {
     
     //fetch single archive
      func fetchArchiveData(cid: Int, archivesCompletionHandler: @escaping (ArchiveModel?, Error?) -> Void) {
-        let url = "https://ifengus.com/api/cms/getArchive?apitoken=hiRNzRjQ!x2x@H@X"
+        let url = String(infoForKey("BASEURL")!) + "/api/cms/getArchive?apitoken=\(infoForKey("APITOKEN")!)"
         var json = [String:Any]()
         
-        json["aid"] = cid
+        json["aid"] = Int(cid)
         
         let postdata = try! JSONSerialization.data(withJSONObject: json, options: [])
         
