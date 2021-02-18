@@ -14,28 +14,24 @@ struct PublicTopAdsBlock: View {
 
     
     var body: some View {
-
-
-
-                        //NavigationLink(destination: ArchiveDetailView(cid: $topAd.id)) {
-                        NavigationLink(destination: AppMainView()) {
-                                HStack(alignment: .top) {
-                                    VStack(alignment: .leading) {
-                                WebImage(url: URL(string: topAds.image)) // 加载网络图片
-                                    .placeholder{ Color.gray }
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: UIScreen.main.bounds.width - 32, height: UIScreen.main.bounds.width * 0.5)
-                                    .clipped()
-                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                                 Text(topAds.title)
-                                    .font(.title3)
-                                
-                                }
-                                
-                            }
-                            .frame(width: UIScreen.main.bounds.width, height: 300)
-                        }
-
+        //NavigationLink(destination: ArchiveDetailView(cid: $topAd.id)) {
+        NavigationLink(destination: AppMainView()) {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                WebImage(url: URL(string: topAds.image)) // 加载网络图片
+                    .placeholder{ Color.gray }
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: UIScreen.main.bounds.width - 32, height: UIScreen.main.bounds.width * 0.5)
+                    .clipped()
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                 Text(topAds.title)
+                    .font(.title3)
+                
+                }
+                
+            }
+            .frame(width: UIScreen.main.bounds.width, height: 300)
+        }
     }
 }

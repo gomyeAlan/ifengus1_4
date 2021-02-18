@@ -73,8 +73,9 @@ class TopAdsManager: ObservableObject {
                 let archives = try JSONDecoder().decode(responsTopadsData.self, from: jsonData)
                 if archives.code == 1 {
                     DispatchQueue.main.async {
-                    self.topAds = archives.data!
-                    self.saveData(context: context)
+                        self.topAds = archives.data!
+//                        self.cleanTopAdsData(context: context)
+//                        self.saveData(context: context)
                     }
                 }else {
                     print("fetch data error\(archives.msg)")

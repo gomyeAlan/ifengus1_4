@@ -43,6 +43,12 @@ struct responseSearch: Codable {
     let data: SearchArchiveModel
 }
 
+
+class SearchArchiveManager: ObservableObject{
+    @Published var isSearch = false
+    
+}
+
 //fetch single archive
  func fetchSearchData(key: String, searchCompletionHandler: @escaping (SearchArchiveModel?, Error?) -> Void) {
     let url = "\(String(infoForKey("BASEURL")!))api/cms/searchlist?search=\(key)&apitoken=\(String(infoForKey("APITOKEN")!))"

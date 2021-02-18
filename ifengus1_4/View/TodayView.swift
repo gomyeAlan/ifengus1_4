@@ -22,35 +22,32 @@ struct TodayView: View {
         ScrollView {
 
             //setupCurrentDate(by: 0)
-        VStack(alignment: .leading) {
-            Text("Hot")
-                .font(.headline)
-                .padding(.leading, 15)
-                .padding(.top, 5)
-            
-
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(alignment: .top, spacing: 0) {
-                            if topadsModel.topAds.isEmpty {
-                                ProgressView()
-                                    .onAppear(perform: {
-                                        topadsModel.fetchTopAdsData(context: moc)
-                                    })
-                            } else {
+            VStack(alignment: .leading) {
+                Text("Hot")
+                    .font(.headline)
+                    .padding(.leading, 15)
+                    .padding(.top, 5)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(alignment: .top, spacing: 0) {
+                        if topadsModel.topAds.isEmpty {
+                            ProgressView()
+                                .onAppear(perform: {
+                                    topadsModel.fetchTopAdsData(context: moc)
+                                })
+                        } else {
                             ForEach(topadsModel.topAds){ topAd in
                                 PublicTopAdsBlock(topAds:topAd) //头部广告轮播
                             }
-                            }
                         }
                     }
+                }
+                                    
                                 
-                                
-            VStack(alignment: .leading) {
+                VStack(alignment: .leading) {
                     Text("New")
                         .font(.headline)
                         .padding(.leading, 15)
                         .padding(.top, 5)
-                    
                     if jam.archiveists.isEmpty {
                         ProgressView()
                             .onAppear(perform: {
@@ -71,7 +68,6 @@ struct TodayView: View {
                     }
                 }
             }.padding(16)
-            
         }
     }
 }

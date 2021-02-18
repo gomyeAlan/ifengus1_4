@@ -9,7 +9,8 @@ import SwiftUI
 import SDWebImageSwiftUI //下载网络图片第三方组建，安装路径：https://github.com/SDWebImage/SDWebImageSwiftUI.git
 
 struct SearchListView: View {
-//    @State var search: SearchArchiveListModel
+
+//    @StateObject var searcharchive : SearchArchiveManager
     
     var body: some View {
 

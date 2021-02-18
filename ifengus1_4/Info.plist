@@ -24,6 +24,8 @@
 	<string>$(BASE_URL)</string>
 	<key>APITOKEN</key>
 	<string>$(APITOKEN)</string>
+	<key>UserLoginUrl</key>
+	<string>$(UserLoginUrl)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

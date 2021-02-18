@@ -12,7 +12,7 @@
 APP_NAME = WendyApp
 
 //Server
-BASE_URL = https:\/\/ifengus.com/ //https:\/\/www.68software.com 
+BASE_URL = https:\/\/ifengus.com //https:\/\/www.68software.com 
 UserLoginUrl = /api/user/loginios
 ChannelUrl = /api/cms/channel
 ArchiveUrl = /api/cms/archives

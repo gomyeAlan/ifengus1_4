@@ -5,7 +5,7 @@
 //  Created by Alan Yang on 2/16/21.
 //
 
-import Foundation
+import SwiftUI
 
 //用户数据
 struct UserData:Codable {

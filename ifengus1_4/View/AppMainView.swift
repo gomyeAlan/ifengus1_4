@@ -14,7 +14,7 @@ struct AppMainView: View {
 
         NavigationView{
             VStack {
-            PublicSearchBar(text: $text)
+//            PublicSearchBar(text: $text)
             TabView {
                 TodayView()
                     .tabItem {
@@ -25,9 +25,7 @@ struct AppMainView: View {
                     .tabItem {
                         Image(systemName: "list.bullet")
                         Text("Menu")
-
                     }
-                 
             }
         }.navigationViewStyle(StackNavigationViewStyle())
          .navigationBarItems(trailing: PublicAccountButton(isAccountViewPresented: $isAccountViewPresented))

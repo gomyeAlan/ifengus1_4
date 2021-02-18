@@ -10,7 +10,7 @@ import SDWebImageSwiftUI //下载网络图片第三方组建
 
 
 struct UserCenterView: View {
-    // @Binding var selected:Int
+        // @Binding var selected:Int
      @ObservedObject var loginmanager: UserLoginManager = UserLoginManager()
 
     
@@ -28,34 +28,30 @@ struct UserCenterView: View {
     
     var body: some View {
         VStack{
-//已经登录-------
+            //已经登录-------
             if !userlist.isEmpty {
-                Form {
-                Section {
-                    
-                    NavigationLink(
-                      destination: UserCenterView(),
-                      label: {
-                        HStack {
-                            
-                            WebImage(url: URL(string: String(infoForKey("BASEURL")!) + "\(userlist.first!.avatar!)")) // 加载网络图片
-                                .placeholder{ Color.gray }
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 50, height: 50)
-                                .clipped()
-                                .font(.system(size: 25))
-                            
-                           
-                          VStack (alignment: .leading, spacing: 5) {
-                            Text("\(userlist.first!.username!)")
-                              .font(.system(size: 25))
-                          }
+                if !isexprise(expiretime: (userlist.first?.expiretime)!) {
+                    Form {
+                        Section {
+                            NavigationLink(
+                                destination: UserCenterView(),
+                                label: {
+                                    HStack {
+                                        WebImage(url: URL(string: String(infoForKey("BASEURL")!) + "\(userlist.first!.avatar!)")) // 加载网络图片
+                                            .placeholder{ Color.gray }
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 50, height: 50)
+                                            .clipped()
+                                            .font(.system(size: 25))
+                                        VStack (alignment: .leading, spacing: 5) {
+                                            Text("\(userlist.first!.username!)")
+                                                .font(.system(size: 25))
+                                        }
+                                    }
+                                })
                         }
-                      }
-                    )
-                }
-                }
+                    }
                     Button(action: {
                         self.cleanUser()
                     }, label: {
@@ -63,41 +59,35 @@ struct UserCenterView: View {
                             .padding().background(Color.blue).foregroundColor(.white)
                             .cornerRadius(15)
                     })
-               
+//                    Text("logindate:\(userlist.first!.logindate!)")
+//                    Text("token:\(userlist.first!.token!)")
+//                    Text("exprietime:\(userlist.first!.expiretime!)")
+//                    Text("username:\(userlist.first!.username!)")
+//                    Text("avatar:\(userlist.first!.avatar!)")
+                } else {
+                    Button("您登录已超时，请重新登录") {
+                        self.cleanUser()
+                    }
+                }
                 
-                //Text("username:\(userlist.first!.username!)")
-               // Text("avatar:\(userlist.first!.avatar!)")
-                Text("logindate:\(userlist.first!.logindate!)")
-                Text("token:\(userlist.first!.token!)")
-                Text("exprietime:\(userlist.first!.expiretime!)")
-               
-              
-                
-//已经登录 完成-------
-                
+                //已经登录 完成-------
             } else {
                 Form {
-                    
                     Section {
-                        
                         NavigationLink(
-                          destination: UserCenterView(),
-                          label: {
-                            HStack {
-                                Image(systemName: "person.crop.circle.fill")
-                                .font(.system(size: 50))
-                                .padding(.horizontal, 5)
-                              
-                              VStack (alignment: .leading, spacing: 5) {
-                                Text("您还没有登录")
-                                  .font(.system(size: 25))
-                              }
-                            }
-                          }
-                        )
+                            destination: UserCenterView(),
+                            label: {
+                                HStack {
+                                    Image(systemName: "person.crop.circle.fill")
+                                        .font(.system(size: 50))
+                                        .padding(.horizontal, 5)
+                                    VStack (alignment: .leading, spacing: 5) {
+                                        Text("您还没有登录")
+                                            .font(.system(size: 25))
+                                    }
+                                }
+                            })
                     }
-                    
-                    
                     Section {
                         HStack{
                             Image(systemName: "person").foregroundColor(.gray).padding()
@@ -107,44 +97,62 @@ struct UserCenterView: View {
                             Image(systemName: "lock").foregroundColor(.gray).padding()
                             SecureField("请输入密码，长度为 6-12", text: $password).keyboardType(.namePhonePad)
                         }.foregroundColor(.gray)
-                     
                     }
                 }
                    
 //                        Button("Login") {
 //                            self.loginVaild(username: username, password: password)
 //                        }
-                   
-                        Button(action: {
-                            self.loginVaild(username: username, password: password)
-                        }, label: {
-                            Text("登录").frame(width: 300, height: 22, alignment: .center)
-                                .padding().background(Color.blue).foregroundColor(.white)
-                                .cornerRadius(15)
-                        })
-                   
-                    .disabled(username.isEmpty || password.isEmpty)
-                    Spacer()
-                    Text(self.returnmsg)
-                        .disabled(self.returnmsg.isEmpty)
-                }
-            }
-            Button("Test function") {
-                print(String(infoForKey("BASE_URL")!) + infoForKey("UserLoginUrl")!)
+                Button(action: {
+                    self.loginVaild(username: username, password: password)
+                }, label: {
+                    Text("登录").frame(width: 300, height: 22, alignment: .center)
+                        .padding().background(Color.blue).foregroundColor(.white)
+                        .cornerRadius(15)
+                })
+                .disabled(username.isEmpty || password.isEmpty)
+                Spacer()
+                Text(self.returnmsg)
+                    .disabled(self.returnmsg.isEmpty)
             }
         }
+//        Button("Test function") {
+//            print(isexprise(expiretime: (userlist.first?.expiretime)!))
+//            self.cleanUser()
+//            print("test function")
+//            print(String(infoForKey("BASEURL")!) + infoForKey("UserLoginUrl")!)
+//        }
+    }
     
     
     
     //登录认证函数
     func loginVaild(username: String, password: String) {
-        let urlStr = String(infoForKey("BASE_URL")!) + infoForKey("UserLoginUrl")! + "?account=\(username.trimmingCharacters(in: .whitespaces))&password=\(password.trimmingCharacters(in: .whitespaces))"
-        guard let url = URL(string: urlStr) else {
-            fatalError("url isn't vaild")
-        }
-        let request = URLRequest.init(url: url)
+//        let urlStr = String(infoForKey("BASEURL")!) + infoForKey("UserLoginUrl")! + "?account=\(username.trimmingCharacters(in: .whitespaces))&password=\(password.trimmingCharacters(in: .whitespaces))"
+//        let request = URLRequest(url: URL(string: urlStr)!)
+        let url = String(infoForKey("BASEURL")!) + infoForKey("UserLoginUrl")! + "?apitoken=\(infoForKey("APITOKEN")!)"
+        var json = [String:Any]()
 
+        json["account"] = username.trimmingCharacters(in: .whitespaces)
+        json["password"] = password.trimmingCharacters(in: .whitespaces)
+
+        let postdata = try! JSONSerialization.data(withJSONObject: json, options: [])
+
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "POST"
+        request.httpBody = postdata
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
+            // checking for any internal api error...
+            let response = response as! HTTPURLResponse
+            // checking by status code...
+            
+            if response.statusCode == 404{
+                print("error API Error")
+            }
             if let error = error {
                 fatalError("Error: \(error.localizedDescription)")
             }
@@ -190,12 +198,12 @@ struct UserCenterView: View {
         }
     }
     
-    //验证用户登录信息是否有效
-//    func vaildUser()
-}
-
-struct UserCenterView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserCenterView()
+    func isexprise(expiretime: Date) -> Bool {
+        if expiretime.compare(Date()) == .orderedAscending {
+            return true
+        } else {
+            return false
+        }
     }
 }
+

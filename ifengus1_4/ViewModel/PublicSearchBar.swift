@@ -10,18 +10,18 @@ import UIKit
 
 
 struct PublicSearchBar: View {
-  @Binding var text: String
-  
-  var body: some View {
-    SearchBar(text: $text)
-      .padding(.horizontal, 2)
-  }
+    
+//    @StateObject var searcharchive = SearchArchiveManager()
+    @Binding var text: String
+    var body: some View {
+        SearchBar(text: $text)
+          .padding(.horizontal, 2)
+      }
 }
 
 
 struct SearchBar: UIViewRepresentable {
   @Binding var text: String
-  
   class Coordinator: NSObject, UISearchBarDelegate {
     @Binding var text: String
     
@@ -39,8 +39,8 @@ struct SearchBar: UIViewRepresentable {
         if (searchtxt != "") {
             print("\(searchtxt)====")
             //Fetch data from URLSession
-//            SearchListView(search: <#T##SearchArchiveListModel#>)
-            
+//            SearchListView()
+                
         } else {
             print("Please input search key")
         }
@@ -80,8 +80,3 @@ extension UIViewRepresentable {
     }
 }
 
-struct CustomSearchBar_Previews: PreviewProvider {
-    static var previews: some View {
-        PublicSearchBar(text: .constant("Search"))
-    }
-}
