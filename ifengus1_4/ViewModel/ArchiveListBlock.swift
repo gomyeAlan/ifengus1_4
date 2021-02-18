@@ -14,6 +14,7 @@ struct ArchiveListBlock: View {
     var body: some View {
 
           VStack(alignment: .leading){
+            NavigationLink(destination: ArchiveDetailView(cid:self.$archive.id)){
               HStack(alignment: .top) {
 
                 WebImage(url: URL(string: archive.image)) // 加载网络图片
@@ -23,7 +24,7 @@ struct ArchiveListBlock: View {
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 0.5)
                     .clipped()
                     .shadow(color: Color.black, radius: 10, x: 0, y: 0)
-                
+                }
               }
 
           VStack(alignment: .leading) {

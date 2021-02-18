@@ -14,8 +14,8 @@ struct PublicTopAdsBlock: View {
 
     
     var body: some View {
-        //NavigationLink(destination: ArchiveDetailView(cid: $topAd.id)) {
-        NavigationLink(destination: AppMainView()) {
+        NavigationLink(destination: ArchiveDetailView(cid: self.$topAds.id)) {
+            //NavigationLink(destination: AppMainView()) {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                 WebImage(url: URL(string: topAds.image)) // 加载网络图片
